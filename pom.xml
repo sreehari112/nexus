@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cjp.in.com</groupId>
+  <artifactId>CounterWebApp</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>CounterWebApp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+      </dependencies>
+  <build>
+    <finalName>CounterWebApp</finalName>
+ <pluginManagement>
+   <plugins>
+    <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+    <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-46-205.us-west-2.compute.internal-releases</name>
+        <url>http://35.162.208.86:8081/artifactory/guru123</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>ip-172-31-46-205.us-west-2.compute.internal-snapshots</name>
+        <url>http://35.162.208.86:8081/artifactory/guru123</url>
+    </snapshotRepository>
+</distributionManagement>
+</project>
