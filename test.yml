@@ -3,3 +3,10 @@
   tasks:
     - name: Install java
       shell: apt-get install default-jdk -y
+      
+    - name: Download Tomcat
+      get_url: url=https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.tar.gz dest=root
+
+    - name: Extract archive
+      unarchive: src=/root/apache-tomcat-8.0.27.tar.gz dest=root
+  
