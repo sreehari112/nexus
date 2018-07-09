@@ -1,12 +1,15 @@
 ---
-- hosts: localhost
+- hosts: server
   tasks:
     - name: Install java
       shell: apt-get install default-jdk -y
       
     - name: Download Tomcat
-      get_url: url=https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.tar.gz dest=root
+      get_url: url=https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.tar.gz dest=/home/ubuntu
 
     - name: Extract archive
-      unarchive: src=/root/apache-tomcat-8.0.27.tar.gz dest=root
+      unarchive: src=/home/ubuntu/apache-tomcat-8.0.27.tar.gz dest=/home/ubuntu 
+      
+    - name: Download Application
+      get_url: url=https://s3-us-west-1.amazonaws.com/vivekapps/LoginApp.war dest=/home/ubuntu
   
