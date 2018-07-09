@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: server
   tasks:
    - name: Install add-apt-repostory
      apt: name=software-properties-common state=latest
