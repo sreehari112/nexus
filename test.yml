@@ -1,7 +1,7 @@
 ---
 - hosts: server
   become: true
-  remote_user: root
+  remote_user: yes
   become_method: sudo
   tasks:
     - name: Install java
@@ -18,6 +18,7 @@
       
     - name: Copy application
       shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.27/webapps/
+      
     - name: stop apache-tomcat-8.0.27
       shell: /home/ubuntu/apache-tomcat-8.0.27/bin/shutdown.sh
      
