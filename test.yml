@@ -17,10 +17,10 @@
       get_url: url=http://34.219.81.207:8081/artifactory/Prod/CounterWebApp.war dest=/home/ubuntu
       
     - name: Copy application
-      shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/tomcat/apache-tomcat-8.0.27/webapps/
+      shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.27/webapps/
     - name: stop apache-tomcat-8.0.27
-      shell: /home/ubuntu/tomcat/apache-tomcat-8.0.27/bin/shutdown.sh
+      shell: /home/ubuntu/apache-tomcat-8.0.27/bin/shutdown.sh
      
     - name: start apache-tomcat-8.0.27
-      shell: /home/ubuntu/tomcat/apache-tomcat-8.0.27/bin/startup.sh
+      shell: /home/ubuntu/apache-tomcat-8.0.27/bin/startup.sh
 
