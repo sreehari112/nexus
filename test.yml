@@ -1,27 +1,26 @@
 ---
 - hosts: all
-  become: true
   remote_user: root
-  become_method: sudo
+  sudo: yes
   tasks:
     - name: Install java
       shell: apt-get install default-jdk -y
       
     - name: Download Tomcat
-      get_url: url=https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.tar.gz dest=/home/ubuntu
+      get_url: url=http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.0.53/bin/apache-tomcat-8.0.53.tar.gz dest=/home/ubuntu
 
     - name: Extract archive
-      unarchive: src=/home/ubuntu/apache-tomcat-8.0.27.tar.gz dest=/home/ubuntu remote_src=yes
+      unarchive: src=/home/ubuntu/apache-tomcat-8.0.53.tar.gz dest=/home/ubuntu remote_src=yes
       
     - name: Download Application
       get_url: url=http://18.232.104.159:8081/artifactory/Artifact/CounterWebApp.war dest=/home/ubuntu
       
     - name: Copy application
-      shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.27/webapps/
+      shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.53/webapps/
       
-    - name: stop apache-tomcat-8.0.27
-      command: "nohup /home/ubuntu/apache-tomcat-8.0.27/bin/shutdown.sh"
+    - name: stop apache-tomcat-8.0.53
+      command: "nohup /home/ubuntu/apache-tomcat-8.0.53/bin/shutdown.sh"
      
-    - name: start apache-tomcat-8.0.27
-      command: "/home/ubuntu/apache-tomcat-8.0.27/bin/startup.sh"
+    - name: start apache-tomcat-8.0.53
+      command: "/home/ubuntu/apache-tomcat-8.0.53/bin/startup.sh"
 
