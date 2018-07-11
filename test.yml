@@ -14,14 +14,14 @@
       unarchive: src=/home/ubuntu/apache-tomcat-8.0.27.tar.gz dest=/home/ubuntu remote_src=yes
       
     - name: Download Application
-      get_url: url=http://34.219.81.207:8081/artifactory/Prod/CounterWebApp.war dest=/home/ubuntu
+      get_url: url=http://18.232.104.159:8081/artifactory/Artifact/CounterWebApp.war dest=/home/ubuntu
       
     - name: Copy application
       shell: cp /home/ubuntu/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.27/webapps/
       
     - name: stop apache-tomcat-8.0.27
-      shell: /home/ubuntu/apache-tomcat-8.0.27/bin/shutdown.sh
+      command: "nohup /home/ubuntu/apache-tomcat-8.0.27/bin/shutdown.sh"
      
     - name: start apache-tomcat-8.0.27
-      shell: /home/ubuntu/apache-tomcat-8.0.27/bin/startup.sh
+      command: "/home/ubuntu/apache-tomcat-8.0.27/bin/startup.sh"
 
