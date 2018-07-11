@@ -1,5 +1,5 @@
 ---
-- hosts: dev
+- hosts: prod
   remote_user: root
   sudo: yes
   tasks:
