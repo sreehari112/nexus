@@ -1,8 +1,8 @@
 ---
 - hosts: all
   remote_user: root
-  become_user: yes
-  sudo: yes
+#  become_user: yes
+#  sudo: yes
   tasks:
     - name: Install java
       shell: apt-get install default-jdk -y
