@@ -22,5 +22,5 @@
       command: "nohup /home/ubuntu/apache-tomcat-8.0.53/bin/shutdown.sh"
      
     - name: start apache-tomcat-8.0.53
-      command: "/home/ubuntu/apache-tomcat-8.0.53/bin/startup.sh"
+      command: "nohup /home/ubuntu/apache-tomcat-8.0.53/bin/startup.sh"
 
