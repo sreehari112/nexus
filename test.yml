@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: devB
   remote_user: root
   sudo: yes
   tasks:
