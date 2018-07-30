@@ -1,5 +1,5 @@
 ---
-- hosts: stagingB
+- hosts: nodee
   remote_user: root
   sudo: yes
   tasks:
