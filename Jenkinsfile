@@ -16,5 +16,10 @@ pipeline {
         input 'Finished using the web site? (Click "Proceed" to continue)'
       }
     }
+    stage('Deliver') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
   }
 }
