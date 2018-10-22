@@ -11,5 +11,10 @@ pipeline {
         sh 'mvn clean test'
       }
     }
+    stage('Input') {
+      steps {
+        input 'Finished using the web site? (Click "Proceed" to continue)'
+      }
+    }
   }
 }
