@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: node
   remote_user: root
   sudo: yes
   tasks:
