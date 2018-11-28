@@ -13,7 +13,7 @@
     #  get_url: url=http://18.232.104.159:8081/artifactory/Artifact/CounterWebApp.war dest=/home/ubuntu
       
     - name: Copy application
-      shell: cp /root/sample/workspace/tomcat/target/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.53/webapps/
+      shell: cp /root/sample/workspace/Ansible/target/CounterWebApp.war /home/ubuntu/apache-tomcat-8.0.53/webapps/
       
     - name: stop apache-tomcat-8.0.53
       command: "nohup /home/ubuntu/apache-tomcat-8.0.53/bin/shutdown.sh"
